@@ -1,9 +1,13 @@
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import 'package:happy_apps/navbar.dart';
 
 void main(){
   runApp(MyWidget());
   
 }
+
+
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -13,27 +17,52 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.green,
-        body: Center(
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.red,
-            child: Text(
-              "akbar"
-            ),
+        drawer: NavBar(),
+        appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            systemNavigationBarColor: Colors.black,
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              Text("data")
+            ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME", backgroundColor: Colors.red),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME", backgroundColor: Colors.amber),
-        ]),
-        
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.chat),
+              label: 'Chat',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.play_circle_outline_sharp),
+              label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.stay_current_landscape_outlined),
+              label: 'Games',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+          ),
+          ],    
+        )
       ),
-      
-
-
-
     );
   }
 }
