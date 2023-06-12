@@ -1,16 +1,18 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import 'package:happy_apps/navbar.dart';
+import 'package:happy_apps/bottomnavbar.dart';
+
 
 void main(){
-  runApp(const MyWidget());
+  runApp(const Main());
   
 }
 
 
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class Main extends StatelessWidget {
+  const Main({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +45,12 @@ class MyWidget extends StatelessWidget {
                     height: 200,
                     child: const Column(
                       children: [
-                        Text("data"),
-                        Text("data")
+                        Image(image: AssetImage("assets/images/emoji_angry.png")),
+                        Image(image: AssetImage("assets/images/chat.png")),
+                        Image(image: AssetImage("assets/images/chat.png")),
+                        Image(image: AssetImage("assets/images/chat.png")),
+                        Image(image: AssetImage("assets/images/chat.png")),
+                        
                       ],
                     ),
                   ),
@@ -52,9 +58,9 @@ class MyWidget extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 150),
                   Container(
-                    height: MediaQuery.of(context).size.height-362,
+                    height: MediaQuery.of(context).size.height-462,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
@@ -68,38 +74,7 @@ class MyWidget extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.black,
-          items: const [
-          BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage("assets/images/home.png"),
-                  color: Color(0xFF3A5A98),
-               ),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
-              label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.play_circle_outline_sharp),
-              label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.stay_current_landscape_outlined),
-              label: 'Games',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-          ),
-          ],    
-        )
+        bottomNavigationBar: const BottomNavbar()
       ),
     );
   }

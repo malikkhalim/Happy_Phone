@@ -70,6 +70,12 @@ flutter:
     - assets/images/home.png
     - assets/images/profile.png
     - assets/images/image_6.png
+    - assets/images/emoji_angry.png
+    - assets/images/emoji_calm.png
+    - assets/images/emoji_happy.png
+    - assets/images/emoji_sad.png
+    - assets/images/emoji_worry.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
