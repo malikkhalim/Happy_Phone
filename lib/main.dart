@@ -3,7 +3,7 @@ import "package:flutter/services.dart";
 import 'package:happy_apps/navbar.dart';
 
 void main(){
-  runApp(MyWidget());
+  runApp(const MyWidget());
   
 }
 
@@ -17,9 +17,9 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.green,
-        drawer: NavBar(),
+        drawer: const NavBar(),
         appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.black,
           ),
           backgroundColor: Colors.transparent,
@@ -28,21 +28,59 @@ class MyWidget extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 20),
-              Text("data")
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomLeft: Radius.circular(10)
+                      ) 
+                    ),
+                    width: 50,
+                    height: 200,
+                    child: const Column(
+                      children: [
+                        Text("data"),
+                        Text("data")
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SizedBox(height: 50),
+                  Container(
+                    height: MediaQuery.of(context).size.height-362,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)
+                      ),
+                      color: Colors.white,
+                    ),
+                  )
+                ]
+              ),
             ],
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           elevation: 0,
-          selectedItemColor: Colors.white,
+          selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.black,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+          items: const [
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/images/home.png"),
+                  color: Color(0xFF3A5A98),
+               ),
+            label: "Home",
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.chat),
