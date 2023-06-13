@@ -2,10 +2,12 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import 'package:happy_apps/navbar.dart';
 import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/chat/chat.dart';
 
 
 void main(){
-  runApp(const Main());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp( Chat());
   
 }
 
@@ -17,6 +19,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.green,
         drawer: const NavBar(),
@@ -44,32 +47,30 @@ class Main extends StatelessWidget {
                     width: 50,
                     height: 200,
                     child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image(image: AssetImage("assets/images/emoji_angry.png")),
-                        Image(image: AssetImage("assets/images/chat.png")),
-                        Image(image: AssetImage("assets/images/chat.png")),
-                        Image(image: AssetImage("assets/images/chat.png")),
-                        Image(image: AssetImage("assets/images/chat.png")),
-                        
+                        Image(image: AssetImage("assets/images/emoji_happy.png"), width: 30),
+                        Image(image: AssetImage("assets/images/emoji_sad.png"), width: 30, ),
+                        Image(image: AssetImage("assets/images/emoji_angry.png"), width: 30),
+                        Image(image: AssetImage("assets/images/emoji_worry.png"), width: 30),
+                        Image(image: AssetImage("assets/images/emoji_calm.png"), width: 30),
                       ],
                     ),
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  const SizedBox(height: 150),
-                  Container(
-                    height: MediaQuery.of(context).size.height-462,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10)
-                      ),
-                      color: Colors.white,
+              const SizedBox(height: 50),
+              Expanded(
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)
                     ),
-                  )
-                ]
+                    color: Colors.white,
+                  ),
+                )
               ),
             ],
           ),
