@@ -5,49 +5,70 @@ class BottomNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.black,
-          items: const [
+    return SizedBox(
+      height: 45, // Set the desired height for the bottom navigation bar
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: TextStyle(fontSize: 10),
+        unselectedLabelStyle: TextStyle(fontSize: 10),
+        iconSize: 17,
+        items: const [
           BottomNavigationBarItem(
-            icon: ImageIcon(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 2),
+              child: ImageIcon(
               AssetImage("assets/images/home.png"),
-                  color: Colors.black,
-               ),
+              color: Colors.black,
+              ),
+            ),
             label: "Home",
           ),
           BottomNavigationBarItem(
-              icon: ImageIcon(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 2),
+              child: ImageIcon(
               AssetImage("assets/images/chat.png"),
-                  color: Colors.black,
-               ),
-              label: 'Chat',
+              color: Colors.black,
+              ),
+            ),
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
-              icon: ImageIcon(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 2),
+              child: ImageIcon(
               AssetImage("assets/images/explore.png"),
-                  color: Colors.black,
-               ),
-              label: 'Explore',
+              color: Colors.black,
+              ),
+            ),
+            label: 'Explore',
           ),
           BottomNavigationBarItem(
-              icon: ImageIcon(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 0),
+              child: ImageIcon(
               AssetImage("assets/images/games.png"),
-                  color: Colors.black,
-               ),
-              label: 'Games',
+              color: Colors.black,
+              ),
+            ),
+            label: 'Games',
           ),
           BottomNavigationBarItem(
-              icon: ImageIcon(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 2),
+              child: ImageIcon(
               AssetImage("assets/images/profile.png"),
-                  color: Colors.black,
-               ),
-              label: 'Profile',
+              color: Colors.black,
+              ),
+            ), 
+            label: 'Profile',
           ),
-        ],    
+        ],
+      ),
     );
   }
 }
