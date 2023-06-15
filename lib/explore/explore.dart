@@ -15,7 +15,7 @@ class Explore extends StatelessWidget {
             children: [
               ListTile(
                 title: Container(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 10),
                   child: Text(
                     "Explore",
                     style: TextStyle(
@@ -26,36 +26,50 @@ class Explore extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 0),
               ListTile(
                 title: Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  height: 200,
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  height: 145,
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent[100],
+                    color: Colors.grey[800],
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 13),
               ListTile(
                 title: Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  height: 200,
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  height: 120,
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent[100],
+                    color: Colors.grey[800],
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 13),
               ListTile(
                 title: Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  height: 200,
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  height: 120,
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent[100],
+                    color: Colors.grey[800],
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                 ),
-              ),  
+              ),
+              SizedBox(height: 13),
+              ListTile(
+                title: Container(
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[800],
+                    borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                ),
+              ),    
             ],
           ),
         ),

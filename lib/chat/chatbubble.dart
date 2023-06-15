@@ -32,7 +32,6 @@ class ChatBubbleLeft extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),

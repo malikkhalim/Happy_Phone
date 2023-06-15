@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import 'package:happy_apps/chat/chat_room.dart';
 import 'package:happy_apps/explore/explore.dart';
+import 'package:happy_apps/explore/peer2peer_room.dart';
 import 'package:happy_apps/navbar.dart';
 import 'package:happy_apps/bottomnavbar.dart';
 import 'package:happy_apps/chat/chat.dart';
@@ -9,7 +10,7 @@ import 'package:happy_apps/chat/chat.dart';
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
-  runApp( Explore());
+  runApp( PeerRoom());
   
 }
 
