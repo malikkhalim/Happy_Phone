@@ -8,15 +8,18 @@ class PeerRoom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: "WorkSans"
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            ListTile(
+            const ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     "Explore",
                     style: TextStyle(
@@ -33,15 +36,15 @@ class PeerRoom extends StatelessWidget {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         "Peer Counselor",
                         style: TextStyle(fontSize: 15),
                       ),
                       Row(
-                        children: const [
+                        children: [
                           Text("More"),
                           SizedBox(width: 5),
                           Icon(
@@ -54,15 +57,30 @@ class PeerRoom extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 25),
-                  SingleChildScrollView(
+                  const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children: const [
-                        _PeerContainer(),
+                      children: [
+                        _PeerContainer(
+                          name: "Conselor 1",
+                          title: "Mahasiswa Psikologi",
+                          umur: "26 Tahun",
+                          imageAsset: "assets/images/conselor2.png",
+                        ),
                         SizedBox(width: 20),
-                        _PeerContainer(),
+                        _PeerContainer(
+                          name: "Conselor 2",
+                          title: "Mahasiswa Psikologi",
+                          umur: "26 Tahun",
+                          imageAsset: "assets/images/conselor1.png",
+                        ),
                         SizedBox(width: 20),
-                        _PeerContainer(),
+                        _PeerContainer(
+                          name: "Conselor 3",
+                          title: "Mahasiswa Psikologi",
+                          umur: "26 Tahun",
+                          imageAsset: "assets/images/conselor2.png",
+                        ),
                       ],
                     ),
                   ),
@@ -74,24 +92,24 @@ class PeerRoom extends StatelessWidget {
                         height: 150,
                         padding: const EdgeInsets.only(top: 10),
                         decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: const Color.fromARGB(255, 188, 188, 188),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               "Last Counselor",
                               style: TextStyle(color: Colors.white),
                             ),
                             _LastCounselorRow(
                               imageAsset: "assets/images/avatar3.png",
-                              name: "Friend 1",
+                              name: "Conselor 1",
                             ),
                             _LastCounselorRow(
                               imageAsset: "assets/images/avatar3.png",
-                              name: "Friend 2",
+                              name: "Conselor 2",
                             ),
                           ],
                         ),
@@ -103,27 +121,65 @@ class PeerRoom extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavbar(),
+        bottomNavigationBar: const BottomNavbar(),
       ),
     );
   }
 }
 
 class _PeerContainer extends StatelessWidget {
-  const _PeerContainer({super.key});
+  const _PeerContainer({
+    super.key,
+    required this.name,
+    required this.umur,
+    required this.imageAsset,
+    required this.title,
+  });
+
+  final String name;
+  final String umur;
+  final String imageAsset;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 280,
-      width: 180,
-      decoration: BoxDecoration(
-        color: Colors.grey[800],
-        borderRadius: BorderRadius.circular(15),
-      ),
-      margin: const EdgeInsets.only(right: 20),
+    return Stack(
+      children: [
+        Container(
+          height: 280,
+          width: 180,
+          decoration: BoxDecoration(
+            color: Colors.grey[800],
+            borderRadius: BorderRadius.circular(15),
+          ),
+          margin: const EdgeInsets.only(right: 20),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Image.asset(imageAsset, fit: BoxFit.cover,),
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 60,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("${name} | ${umur}", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 11)),
+                  Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 8)),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
+
 }
 
 class _LastCounselorRow extends StatelessWidget {

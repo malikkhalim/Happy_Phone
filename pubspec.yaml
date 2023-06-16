@@ -86,6 +86,8 @@ flutter:
     - assets/images/explore_banner_recomend.png
     - assets/images/video_banner.png
     - assets/images/conselor_banner.png
+    - assets/images/conselor1.png
+    - assets/images/conselor2.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

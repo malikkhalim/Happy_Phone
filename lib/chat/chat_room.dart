@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:happy_apps/bottomnavbar.dart';
 import 'package:happy_apps/chat/chatbubble.dart';
+import 'package:happy_apps/color.dart';
 
 class ChatRoom extends StatelessWidget {
   const ChatRoom({super.key});
@@ -42,6 +43,9 @@ class ChatRoom extends StatelessWidget {
     ];
 
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: "WorkSans"
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -124,7 +128,7 @@ class ChatRoom extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 15,
                           child: ClipOval(
-                            child: Icon(Icons.video_camera_back, size: 18),
+                            child: Icon(Icons.video_camera_back, size: 18,),
                           ),
                         ),
                       ),
@@ -158,7 +162,7 @@ class ChatRoom extends StatelessWidget {
                       height: 28,
                       margin: EdgeInsets.only(left: 20, right: 20),
                       decoration: BoxDecoration(
-                        color: Colors.blueAccent[100],
+                        color: ColorSelect.gray,
                         borderRadius: BorderRadius.circular(15)
                       ),
                       child: Row(
@@ -188,7 +192,8 @@ class ChatRoom extends StatelessWidget {
                               radius: 12,
                               child: Icon(
                                 Icons.double_arrow_outlined,
-                                size: 20
+                                size: 20,
+                                color: ColorSelect.blue,
                               ),
                             ),
                           ),

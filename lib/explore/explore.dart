@@ -9,6 +9,9 @@ class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: "WorkSans"
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
@@ -74,7 +77,7 @@ class Explore extends StatelessWidget {
                         child: Image.asset("assets/images/conselor_banner.png", fit: BoxFit.cover,),
                       ),
                     ),
-                    Text("Peer Conselor", style: TextStyle(color: Colors.white),)
+                    Text("Peer Conselor", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),)
                   ],
                 )
               ),
@@ -96,7 +99,7 @@ class Explore extends StatelessWidget {
                         child: Image.asset("assets/images/video_banner.png", fit: BoxFit.cover,),
                       ),
                     ),
-                    Text("Video", style: TextStyle(color: Colors.white),)
+                    Text("Video", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),)
                   ],
                 )
               ),
@@ -118,7 +121,7 @@ class Explore extends StatelessWidget {
                         child: Image.asset("assets/images/video_banner.png", fit: BoxFit.cover,),
                       ),
                     ),
-                    Text("Content", style: TextStyle(color: Colors.white),)
+                    Text("Content", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),)
                   ],
                 )
               ),    

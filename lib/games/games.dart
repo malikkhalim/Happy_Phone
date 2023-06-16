@@ -8,6 +8,9 @@ class Games extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: "WorkSans"
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
