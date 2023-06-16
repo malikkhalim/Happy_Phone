@@ -110,7 +110,7 @@ class ChatRoom extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(left: 20, top: 4),
                     child: Text(
-                      "Friend 1",
+                      "Friend",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,

@@ -8,17 +8,19 @@ class NavBar extends StatelessWidget {
     return Drawer(
       child: Container(
         color: const Color.fromRGBO(235, 235, 235, 100),
-        child: ListView(
+        child: Column(
           children: [
             Expanded(
+              flex: 3,
               child: DrawerHeader(
                 padding: EdgeInsets.zero,
                 child: Container(
+                  alignment: Alignment.center,
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)
+                      bottomRight: Radius.circular(20),
                     ),
                   ),
                   child: Column(
@@ -36,29 +38,27 @@ class NavBar extends StatelessWidget {
                       ),
                       const SizedBox(height: 12),
                       const Text(
-                        "MALIK SI GANTENG",
+                        "MALIK",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(top: 20),
-                          width: 20,
-                          height: 20,
-                          color: Colors.black,
-                        ),
-                      )
                     ],
                   ),
                 ),
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.file_copy),
-              title: Text("INI TEST 1"),
-              onTap: () => print("TEST TAPPED"),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: const Color.fromRGBO(235, 235, 235, 100),
+                child: ListTile(
+                  leading: Icon(Icons.file_copy),
+                  title: Text("INI TEST 1"),
+                  onTap: () => print("TEST TAPPED"),
+                ),
+              ),
             ),
           ],
         ),

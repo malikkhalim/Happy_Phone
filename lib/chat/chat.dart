@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:happy_apps/bottomnavbar.dart';
 import 'package:happy_apps/chat/appbar.dart';
+import 'package:happy_apps/chat/chat_room.dart';
 import 'package:happy_apps/navbar.dart';
 
 
@@ -135,7 +136,23 @@ class Chat extends StatelessWidget {
                   itemCount: friends.length,
                   itemBuilder: (context, index) {
                     final friend = friends[index];
-                    return Container(
+                    return GestureDetector(
+                      onTap: () {
+                        // Navigate to another page
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) => ChatRoom(),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    child: Container(
                       height: 65,
                       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       padding: const EdgeInsets.only(left: 10),
@@ -180,6 +197,7 @@ class Chat extends StatelessWidget {
                           )
                         ],
                       ),
+                    )
                     );
                   },
                 ),
