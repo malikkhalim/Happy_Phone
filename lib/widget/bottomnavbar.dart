@@ -3,6 +3,7 @@ import 'package:happy_apps/chat/chat.dart';
 import 'package:happy_apps/explore/explore.dart';
 import 'package:happy_apps/games/games.dart';
 import 'package:happy_apps/main.dart';
+import 'package:happy_apps/screen/home_page.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -25,7 +26,7 @@ void _onItemTapped(int index) {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => Main(),
+          pageBuilder: (context, animation, secondaryAnimation) => HomePage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,

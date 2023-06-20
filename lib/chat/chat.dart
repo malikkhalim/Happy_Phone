@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 import 'package:happy_apps/chat/appbar.dart';
 import 'package:happy_apps/chat/chat_room.dart';
-import 'package:happy_apps/navbar.dart';
+import 'package:happy_apps/widget/navbar.dart';
 
 
 class Chat extends StatelessWidget {
@@ -208,7 +208,7 @@ class Chat extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const BottomNavbar(),
+        bottomNavigationBar: BottomNavbar(),
       ),
     );
   }

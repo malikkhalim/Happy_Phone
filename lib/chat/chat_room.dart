@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 import 'package:happy_apps/chat/chatbubble.dart';
-import 'package:happy_apps/color.dart';
+import 'package:happy_apps/widget/color.dart';
 
 class ChatRoom extends StatelessWidget {
   const ChatRoom({super.key});
@@ -162,7 +162,7 @@ class ChatRoom extends StatelessWidget {
                       height: 28,
                       margin: EdgeInsets.only(left: 20, right: 20),
                       decoration: BoxDecoration(
-                        color: ColorSelect.gray,
+                        color: ColorHappy.gray,
                         borderRadius: BorderRadius.circular(15)
                       ),
                       child: Row(
@@ -193,7 +193,7 @@ class ChatRoom extends StatelessWidget {
                               child: Icon(
                                 Icons.double_arrow_outlined,
                                 size: 20,
-                                color: ColorSelect.blue,
+                                color: ColorHappy.blue,
                               ),
                             ),
                           ),
@@ -206,7 +206,7 @@ class ChatRoom extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const BottomNavbar(),
+        bottomNavigationBar: BottomNavbar(),
       ),
     );
   }

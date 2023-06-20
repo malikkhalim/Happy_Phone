@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 
 class GamesSelect extends StatelessWidget {
   const GamesSelect({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:happy_apps/color.dart';
+import 'package:happy_apps/widget/color.dart';
 
 
 class ChatBubbleLeft extends StatelessWidget {
@@ -39,7 +39,7 @@ class ChatBubbleLeft extends StatelessWidget {
                   bottomRight: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color: ColorSelect.blue,
+                color: ColorHappy.blue,
               ),
               margin: EdgeInsets.only(left: 10, right: 140, top: 20),
               child: Column(
@@ -89,7 +89,7 @@ class ChatBubbleRight extends StatelessWidget {
                   bottomLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color: ColorSelect.gray,
+                color: ColorHappy.gray,
               ),
               margin: EdgeInsets.only(left: 140, right: 10, top: 20),
               child: Column(

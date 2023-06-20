@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 import 'package:happy_apps/explore/peer2peer_room.dart';
 
 class Explore extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 
 class PeerRoom extends StatelessWidget {
   const PeerRoom({super.key});
@@ -121,7 +121,7 @@ class PeerRoom extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: const BottomNavbar(),
+        bottomNavigationBar: BottomNavbar(),
       ),
     );
   }

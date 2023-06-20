@@ -5,14 +5,15 @@ import 'package:happy_apps/explore/explore.dart';
 import 'package:happy_apps/explore/peer2peer_room.dart';
 import 'package:happy_apps/games/games.dart';
 import 'package:happy_apps/games/games_select.dart';
-import 'package:happy_apps/navbar.dart';
-import 'package:happy_apps/bottomnavbar.dart';
+import 'package:happy_apps/widget/navbar.dart';
+import 'package:happy_apps/widget/bottomnavbar.dart';
 import 'package:happy_apps/chat/chat.dart';
+import 'package:happy_apps/screen/home_page.dart';
 
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
-  runApp( Main());
+  runApp( HomePage());
   
 }
 
@@ -112,7 +113,7 @@ class Main extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const BottomNavbar()
+        bottomNavigationBar: BottomNavbar(),
       ),
     );
   }
