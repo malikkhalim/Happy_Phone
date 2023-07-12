@@ -1,6 +1,6 @@
 # happy_apps
 
-A new Flutter project.
+Happy Prototype Project
 
 ## Getting Started
 
